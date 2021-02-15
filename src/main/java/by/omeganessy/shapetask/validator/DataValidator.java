@@ -2,10 +2,8 @@ package by.omeganessy.shapetask.validator;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.Arrays;
 
-import static by.omeganessy.shapetask.validator.TetrahedronValidator.logger;
 
 public class DataValidator {
     static Logger logger = LogManager.getLogger();

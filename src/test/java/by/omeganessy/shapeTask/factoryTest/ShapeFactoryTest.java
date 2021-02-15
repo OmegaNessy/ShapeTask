@@ -1,4 +1,4 @@
-package factoryTest;
+package by.omeganessy.shapeTask.factoryTest;
 
 import by.omeganessy.shapetask.entity.Tetrahedron;
 import by.omeganessy.shapetask.exception.CustomException;

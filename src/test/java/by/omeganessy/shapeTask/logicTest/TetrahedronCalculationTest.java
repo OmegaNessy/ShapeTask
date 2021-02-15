@@ -1,4 +1,4 @@
-package logicTest;
+package by.omeganessy.shapeTask.logicTest;
 
 import by.omeganessy.shapetask.entity.Point;
 import by.omeganessy.shapetask.entity.Tetrahedron;

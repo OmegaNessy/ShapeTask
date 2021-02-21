@@ -11,6 +11,7 @@ public class Point {
     public Point(int pointX, int pointY, int pointZ) {
         this.pointX = pointX;
         this.pointY = pointY;
+        this.pointZ = pointZ;
     }
 
     public int getPointX() {
@@ -66,8 +67,8 @@ public class Point {
         string.append("pointY=");
         string.append(pointY);
         string.append(",\n");
-        string.append("pointY=");
-        string.append(pointY);
+        string.append("pointZ=");
+        string.append(pointZ);
         string.append("\n");
         return string.toString();
     }

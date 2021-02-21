@@ -1,26 +1,46 @@
 package by.omeganessy.shapeTask.factoryTest;
 
+import by.omeganessy.shapetask.entity.Point;
 import by.omeganessy.shapetask.entity.Tetrahedron;
 import by.omeganessy.shapetask.exception.CustomException;
 import by.omeganessy.shapetask.factory.impl.ShapeFactory;
-import by.omeganessy.shapetask.logic.implementation.TetrahedronCalculator;
-import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ShapeFactoryTest {
-    Tetrahedron testTetrahedron;
-    TetrahedronCalculator testTetrahedronCalculator;
-    ShapeFactory shapeFactory;
+    ShapeFactory factory;
+    Tetrahedron tetrahedron1;
+    List<Point> points;
 
-    @BeforeClass
-    public void setUp() throws CustomException {
-        Integer[] points = {1, 4, 5, 2, 5, 6, 2, 7, 3, 4, 2, 3};
-        List<Integer> pointsCoordinates = new ArrayList<>();
-        pointsCoordinates.addAll(Arrays.asList(points));
-        shapeFactory = new ShapeFactory();
-        shapeFactory.createShape(pointsCoordinates);
+    @BeforeTest
+    public void setUp() {
+        factory = new ShapeFactory();
+        tetrahedron1 = new Tetrahedron(new Point(1,1,1), new Point(-1,-1,1), new Point(-1,1,-1), new Point(1,-1,-1));
+        points = new ArrayList<>();
+        points.add(new Point(1,1,1));
+        points.add(new Point(-1,-1,1));
+        points.add(new Point(-1,1,-1));
+        points.add(new Point(1,1,-1));
     }
+
+    @AfterTest
+    public void tearDown() {
+        factory = null;
+        tetrahedron1 = null;
+    }
+
+    @Test
+    public void testCreateShape() throws CustomException {
+        Tetrahedron actualResult = (Tetrahedron) factory.createShape(points);
+        Tetrahedron expectedResult = tetrahedron1;
+        expectedResult.setId(actualResult.getId());
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
 }

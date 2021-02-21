@@ -1,4 +1,4 @@
-package by.omeganessy.shapetask.logic.implementation;
+package by.omeganessy.shapetask.logic.impl;
 
 import by.omeganessy.shapetask.entity.Point;
 import by.omeganessy.shapetask.entity.Tetrahedron;
@@ -38,9 +38,9 @@ public class TetrahedronCalculator implements ShapeCalculator {
         Point firstPoint = tetrahedron.getPointByIndex(FIRST_POINT_INDEX);
         Point secondPoint = tetrahedron.getPointByIndex(SECOND_POINT_INDEX);
         return Math.sqrt(
-                             Math.pow(firstPoint.getPointX()-secondPoint.getPointX(),2)+
-                             Math.pow(firstPoint.getPointY()-secondPoint.getPointY(),2)+
-                             Math.pow(firstPoint.getPointZ()-secondPoint.getPointZ(),2));
+                             Math.pow((double)firstPoint.getPointX()-secondPoint.getPointX(),2)+
+                             Math.pow((double)firstPoint.getPointY()-secondPoint.getPointY(),2)+
+                             Math.pow((double)firstPoint.getPointZ()-secondPoint.getPointZ(),2));
     }
 
 }

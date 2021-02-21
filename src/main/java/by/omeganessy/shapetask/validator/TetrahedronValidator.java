@@ -29,9 +29,9 @@ public class TetrahedronValidator {
 
     private static double findSide(Point firstPoint,Point secondPoint){
         return Math.sqrt(
-                Math.pow(firstPoint.getPointX()-secondPoint.getPointX(),2)+
-                        Math.pow(firstPoint.getPointY()-secondPoint.getPointY(),2)+
-                        Math.pow(firstPoint.getPointZ()-secondPoint.getPointZ(),2));
+                Math.pow((double)firstPoint.getPointX()-secondPoint.getPointX(),2)+
+                        Math.pow((double)firstPoint.getPointY()-secondPoint.getPointY(),2)+
+                        Math.pow((double)firstPoint.getPointZ()-secondPoint.getPointZ(),2));
     }
 
     private static boolean areEqual(double[] sides){
@@ -52,7 +52,7 @@ public class TetrahedronValidator {
         int counter=0;
         double[] sides = new double[6];
         for (int i = 0; i<=points.size()-1;i++){
-            for (int j = 0; j<i;j++){
+            for (int j = 0; j<=i;j++){
                 sides[counter]=findSide(points.get(j),points.get(i));
                 counter++;
             }

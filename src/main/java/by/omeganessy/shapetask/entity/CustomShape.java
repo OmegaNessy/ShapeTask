@@ -1,19 +1,19 @@
 package by.omeganessy.shapetask.entity;
 
-import java.util.UUID;
+import by.omeganessy.shapetask.generator.IdGenerator;
 
 public abstract class CustomShape {
-    protected UUID id;
+    protected long id;
 
     protected CustomShape() {
-        this.id = UUID.randomUUID();
+        this.id = IdGenerator.getId();
     }
 
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -22,14 +22,14 @@ public abstract class CustomShape {
         if (this == o) return true;
         if (!(o instanceof CustomShape)) return false;
         CustomShape shape = (CustomShape) o;
-        return id == shape.id || (id!=null && id.equals(shape.id));
+        return id == shape.id;
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 31;
         int result = 1;
-        result = PRIME * result + (id!=null?id.hashCode():0);
+        result = PRIME * result + (int) id;
         return result;
     }
 }

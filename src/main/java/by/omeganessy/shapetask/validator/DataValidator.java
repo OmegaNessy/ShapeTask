@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class DataValidator {
     static Logger logger = LogManager.getLogger();
     static final String SPLIT_REGULAR_EXPRESSION = " ";
-    static final int REQUIRED_DATA_LENGTH = 4;
+    static final int REQUIRED_DATA_LENGTH = 12;
 
     private DataValidator() {
         throw new IllegalStateException("Utility class");
